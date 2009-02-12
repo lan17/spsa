@@ -5,10 +5,9 @@
 SPSA stands for Simple Polymorphic Scene API.  It's goals is to create a simple scene graph library for use with Java OpenGL, and provide other useful utilities such as using GLSL shaders and loading certain 3d file formats into the scene among others.
 
 This project has so far been used for 2 other projects
-[list]
-[*] Deer Population Visualizer.
-[*] Volume Renderer for 3d Scalar data.
-[/list]
+* Deer Population Visualizer.
+* Volume Renderer for 3d Scalar data.
+
 
 
 = Details =
