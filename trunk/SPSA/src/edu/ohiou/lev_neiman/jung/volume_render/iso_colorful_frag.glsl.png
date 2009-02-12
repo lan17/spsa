@@ -1,0 +1,19 @@
+varying vec4 color;
+varying vec3 norm;
+varying vec3 lightv;
+varying vec3 viewv;
+
+void main( void )
+{
+        float alpha = color.w;
+	float d_p = length(viewv);
+	
+	float p = 1;
+	d_p *= p;	
+        color = vec4( sin(d_p ), cos(d_p ), sin(d_p)*cos(d_p), 1 );
+	color = mix( color, normalize(vec4( color.xyz, 1 ) ), length(norm*viewv) );
+
+    gl_FragColor = vec4( color.xyz, alpha );
+ 
+
+}

@@ -1,0 +1,16 @@
+varying vec4 color;
+varying vec3 norm;
+varying vec3 lightv;
+varying vec3 viewv;
+
+void main( void )
+{
+    norm = ( gl_ModelViewMatrix * vec4( gl_Normal, 1 ) ).xyz;
+    lightv = normalize( gl_LightSource[0].position - gl_ModelViewMatrix * gl_Vertex );
+    viewv = ( gl_ModelViewMatrix * gl_Vertex );
+
+    color = gl_Color;
+	
+
+    gl_Position = ftransform();
+}

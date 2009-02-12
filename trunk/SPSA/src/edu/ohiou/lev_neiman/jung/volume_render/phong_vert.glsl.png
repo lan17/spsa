@@ -1,0 +1,26 @@
+varying vec4 eyePosition;
+varying vec3 diffuseColor;
+varying vec3 specularColor;
+varying vec3 emissiveColor;
+varying vec3 ambientColor;
+varying float shininess;
+varying vec3 normal;
+
+varying vec4 omg_color;
+varying vec3 light_position;
+void main()
+{
+	gl_Position = ftransform();
+
+        omg_color = gl_Color;
+        //light_position = mix( gl_LightSource[0].position.xyz,  gl_LightSource[1].position.xyz, .5 );
+	light_position = vec3(0.0,0.0,0.0);
+
+	eyePosition = gl_ModelViewMatrix * gl_Vertex;
+	normal = gl_NormalMatrix * gl_Normal;
+	diffuseColor = vec3(gl_FrontMaterial.diffuse);
+	specularColor = vec3(gl_FrontMaterial.specular);
+	emissiveColor = vec3(gl_FrontMaterial.emission);
+	ambientColor = vec3(gl_FrontMaterial.ambient);
+	shininess = gl_FrontMaterial.shininess;
+}
