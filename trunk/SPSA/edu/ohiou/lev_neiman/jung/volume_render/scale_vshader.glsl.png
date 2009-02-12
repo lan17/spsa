@@ -1,0 +1,12 @@
+uniform mat4 inverse_rotation;
+
+vec4 poz;
+
+void main( void )
+{ 
+   vec4 new_t = inverse_rotation * (gl_MultiTexCoord0 * .5);
+   poz = vec4( 0, 0, -1, 1 );
+   poz = inverse_rotation * poz + .5;
+   gl_TexCoord[0] = new_t + .5;
+   gl_Position = ftransform();
+}

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: edu.ohiou.lev_neiman.jung.volume_render.FirstTest
+Bundle-NativeCode: /jogl.dll; /jogl_awt.dll; /gluegen-rt.dll; /jogl_cg.dll
+

@@ -1,0 +1,55 @@
+uniform float left,right,up,down;
+uniform float center_a, center_b;
+uniform float dist_real, dist_i;
+
+varying float color;
+
+varying vec4 eyePosition;
+varying vec3 diffuseColor;
+varying vec3 specularColor;
+varying vec3 emissiveColor;
+varying vec3 ambientColor;
+varying float shininess;
+varying vec3 normal;
+
+varying vec4 omg_color;
+varying vec3 light_position;
+
+float interpolate( float x0, float y0, float x1, float y1, float x ){
+	return y0 + (x-x0)*((y1-y0)/(x1-x0));
+}
+
+void main()
+{
+	float max_iter = 500;
+	float iteration = 0;
+	float x,y,x0,y0;
+	x = interpolate( left, center_a - dist_real, right, center_a + dist_real, gl_Vertex.x );
+	y = interpolate( up, center_b - dist_i, down, center_b + dist_i, gl_Vertex.y );
+	x0 = x;
+	y0 = y;
+	while( x*x + y*y <= 4 && iteration < max_iter )
+	{
+		float xtemp = x*x - y*y + x0;
+		y = 2 * x * y + y0;
+		x = xtemp;
+		iteration += 1;
+	}
+	//vec4 p = gl_Vertex;
+	color = iteration;
+	gl_Vertex.z += log( ( (iteration / max_iter )*2) +1 );
+	gl_Position = ftransform();
+
+
+	omg_color = gl_Color;
+        //light_position = mix( gl_LightSource[0].position.xyz,  gl_LightSource[1].position.xyz, .5 );
+	light_position = vec3(0.0,0.0,0.0);
+
+	eyePosition = gl_ModelViewMatrix * gl_Vertex;
+	normal = gl_NormalMatrix * gl_Normal;
+	diffuseColor = vec3(gl_FrontMaterial.diffuse);
+	specularColor = vec3(gl_FrontMaterial.specular);
+	emissiveColor = vec3(gl_FrontMaterial.emission);
+	ambientColor = vec3(gl_FrontMaterial.ambient);
+	shininess = gl_FrontMaterial.shininess;
+}
