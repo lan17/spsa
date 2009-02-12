@@ -1,6 +1,7 @@
 package edu.ohiou.lev_neiman.mandelbrot;
 
-import edu.ohiou.lev_neiman.sceneapi.basic.*;
+import edu.ohiou.vital_lab.sceneapi.basic.*;
+
 import javax.media.opengl.*;
 
 /**

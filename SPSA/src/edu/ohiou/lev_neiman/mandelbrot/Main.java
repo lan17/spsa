@@ -19,7 +19,7 @@ import java.awt.event.*;
  * @author Lev A. Neiman
  * @version 1.0
  */
-public class Main extends edu.ohiou.lev_neiman.sceneapi.GenericRenderer implements MouseListener, MouseMotionListener, KeyListener
+public class Main extends edu.ohiou.vital_lab.sceneapi.GenericRenderer implements MouseListener, MouseMotionListener, KeyListener
 {
     private Mesh mesh = new Mesh();
 
