@@ -13,3 +13,5 @@ Here is an example of this concept: [http://spsa.googlecode.com/files/racer.exe]
 
 || Figure 1.  If you change spacial properties of parent (larger cube), it will affect spacial properties of all it's children as well. ||
 || <img src=http://spsa.googlecode.com/files/fract.jpg width=640 height=400> ||
+
+== Material ==
