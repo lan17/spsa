@@ -10,9 +10,10 @@ import javax.swing.JOptionPane;
 /**
  * <p>Title: GenericRenderer</p>
  *
- * <p>Description: This class implements both GLCanvas and GLEventListener.  It's purpose is to make it easier to set up a quick JOGL program.  Might not be necessarily good for bigger and more complicated apps.</p>
+ * <p>Description: This class implements both GLCanvas and GLEventListener.  It's purpose is to make it easier to set up a quick JOGL program.  
+ * Might not be necessarily good for bigger and more complicated apps.</p>
  *
- * <p>Copyright: Copyright (c) 2008, Lev A. Neiman</p>
+ * <p>Copyright: Copyright (c) 2009, Lev A. Neiman</p>
  *
  * <p>Company: Ohio University school of EECS.</p>
  *
@@ -22,13 +23,39 @@ import javax.swing.JOptionPane;
 public class GenericRenderer
         extends GLCanvas implements GLEventListener
 {
-    protected Color clear_color = new Color( 0, 0, 0 );
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Clear color for the scene.  Think of it as background color.
+	 */
+	protected Color clear_color = new Color( 0, 0, 0 );
+	
+	/**
+	 * field of view angle.
+	 */
     protected double fovy = 50.0;
+    
+    /**
+     * nearest objects to the camera that are still visible.
+     */
     protected double near = .01;
+    
+    /**
+     * furthest distance from camera to objects that are still visible.
+     */
     protected double far = 1000;
 
+    /**
+     * list of functions that are required for this app.
+     */
     protected LinkedList<String> required_gl_functions = new LinkedList<String> ();
 
+    /**
+     * 
+     */
     public GenericRenderer()
     {
         super.addGLEventListener( this );

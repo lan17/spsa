@@ -4,8 +4,7 @@ package edu.ohiou.vital_lab.sceneapi.basic;
 import java.util.Set;
 import java.util.Vector;
 
-import javax.media.opengl.GLAutoDrawable;
-
+import javax.media.opengl.*;
 /**
  * <p>Wrapper class for ModelFile that can be put anywhere in the scene tree.</p>
  *
@@ -70,8 +69,8 @@ public class ModelNode
      * Overridden method from ANode.  calls super's version and then renders model.
      * @param gld GLAutoDrawable
      */
-    public void render( GLAutoDrawable gld )
+    public void render( GL gl )
     {
-        super.render( gld );
+        super.render( gl );
     }
 }
