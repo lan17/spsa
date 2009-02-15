@@ -8,13 +8,13 @@ import javax.media.opengl.glu.GLU;
 import javax.swing.JOptionPane;
 
 /**
- * <p>Title: Scientific Volume Rendering</p>
+ * <p>Title: GenericRenderer</p>
  *
- * <p>Description: Lev Neiman's Summer Job</p>
+ * <p>Description: This class implements both GLCanvas and GLEventListener.  It's purpose is to make it easier to set up a quick JOGL program.  Might not be necessarily good for bigger and more complicated apps.</p>
  *
  * <p>Copyright: Copyright (c) 2008, Lev A. Neiman</p>
  *
- * <p>Company: Dr. Peter Jung</p>
+ * <p>Company: Ohio University school of EECS.</p>
  *
  * @author Lev A. Neiman
  * @version 1.0
