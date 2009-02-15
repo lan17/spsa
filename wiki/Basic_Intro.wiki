@@ -7,3 +7,5 @@ A scene tree is a way to represent a scene where each object is related to anoth
 In this way it is easy to construct a fairly complex structure as a tree, then move parts of it by moving the root of that part, and having all children of this node move rigidly with the parent, as well as rotate or scale with the parent.
 
 Here is an example of this concept: [http://spsa.googlecode.com/files/racer.exe].  It was made in C++, but features the same idea as explained here (I actually ported SPSA from C++ into Java at some point).  This program recursively creates a tree of cubes, where each parent has 6 children which are smaller and have certain offset from the parent.
+
+|| Figure 1.  If you move the large cube, it will move all it's children as well. ||
