@@ -2,6 +2,6 @@
 
 = Scene Tree =
 
-A scene tree creates a data structure that relates each object in a tree to another object via parent/child relationship.  Each node contains information such as it's position, size and rotation.  However these values are relative to the parent, so position of a node should be more accurately thought of as it's offset from the parent.
+A scene tree is a way to represent a scene where each object is related to another spatially via parent/child relationship.  ANode class is super class to all other objects in a tree.  It stores position, scale and rotation.  However these values are always in relation to node's parent.  
 
-These fields are defined in ANode class, which serves as super class for all other objects in scene tree.  This class also contains convenience methods for drawing the tree, counting number of nodes, etc.
+In this way it is easy to construct a fairly complex structure as a tree, then move parts of it by moving the root of that part, and having all children of this node move rigidly with the parent, as well as rotate or scale with the parent.
