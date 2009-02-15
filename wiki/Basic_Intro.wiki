@@ -4,4 +4,4 @@
 
 A scene tree creates a data structure that relates each object in a tree to another object via parent/child relationship.  Each node contains information such as it's position, size and rotation.  However these values are relative to the parent, so position of a node should be more accurately thought of as it's offset from the parent.
 
-These fields are defined in ANode class, which serves as super class for all other objects in scene tree.  This class also defines static method used for drawing the tree using OpenGL.  
+These fields are defined in ANode class, which serves as super class for all other objects in scene tree.  This class also contains convenience methods for drawing the tree, counting number of nodes, etc.
