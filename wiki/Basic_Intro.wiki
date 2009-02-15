@@ -8,5 +8,5 @@ In this way it is easy to construct a fairly complex structure as a tree, then m
 
 Here is an example of this concept: [http://spsa.googlecode.com/files/racer.exe].  It was made in C++, but features the same idea as explained here (I actually ported SPSA from C++ into Java at some point).  This program recursively creates a tree of cubes, where each parent has 6 children which are smaller and have certain offset from the parent.
 
-|| Figure 1.  If you move the large cube, it will move all it's children as well. ||
-|| [http://spsa.googlecode.com/files/fract.jpg] ||
+|| Figure 1.  If you change spacial properties of parent (larger cube), it will affect spacial properties of all it's children as well. ||
+|| <img src=http://spsa.googlecode.com/files/fract.jpg> ||
