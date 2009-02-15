@@ -18,4 +18,8 @@ ANode contains render method which performs OpenGL transformations based on ANod
 
 == Lights and Materials ==
 
-SPSA contains wrapper classes to handle light sources and material properties.  
+SPSA contains wrapper classes to handle light sources and material properties.  LightNode inherits from ANode while Material class does not.  This is because location of a light source is important, but Material changes material properties globally, and it's position is irrelevant.
+
+You should be mindful of both your light sources properties as well as material properties when trying to get correct visual effect.
+
+To familiarize yourself with lights and material properties in OpenGL please read Red Book guide: http://glprogramming.com/red/chapter05.html
