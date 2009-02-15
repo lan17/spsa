@@ -173,9 +173,9 @@ public class ANode
      * This one just modifies the current ModelView matrix by this node's offset, rotation and scale.
      * @param g GLAutoDrawable
      */
-    public void render( GLAutoDrawable g )
+    public void render( GL gl )
     {
-        GL gl = g.getGL();
+        //GL gl = g.getGL();
         gl.glTranslated( translation.getX(), translation.getY(),
                          translation.getZ() ); // modify current model view matrix with this translation.
         gl.glScaled( scale.getX(), scale.getY(), scale.getZ() ); // scale relative to the parent.
@@ -219,17 +219,17 @@ public class ANode
      * @param contex GLAutoDrawable
      * @param root ANode
      */
-    static public void renderTree( GLAutoDrawable contex, ANode root )
+    static public void renderTree( GL gl, ANode root )
     {
-        GL gl = contex.getGL();
+        //GL gl = contex.getGL();
         if( root.pushPop() )
         {
             gl.glPushMatrix(); // push current model view matrix on the stack, if pushPop is true
         }
-        root.render( contex ); // render current node.  This will potentialy affect modelview matrix.
+        root.render( gl ); // render current node.  This will potentialy affect modelview matrix.
         for( Object child : root.children )
         {
-            renderTree( contex, ( ( ANode ) child ) );
+            renderTree( gl, ( ( ANode ) child ) );
         } // render the children.  Notice that modelview matrix affecting these children is modified by previous call to root.render()
         if( root.pushPop() )
         {

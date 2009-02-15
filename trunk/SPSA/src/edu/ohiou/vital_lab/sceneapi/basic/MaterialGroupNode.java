@@ -147,14 +147,14 @@ public class MaterialGroupNode
      * Overloaded render method.  This method actually renders the material group, and maps the texture, applies material properties, etc.
      * @param gld GLAutoDrawable
      */
-    public void render( GLAutoDrawable gld )
+    public void render( GL gl )
     {
-        super.render( gld ); // call super method, so that spacial information is applied.
-        GL gl = gld.getGL();
+        super.render( gl ); // call super method, so that spacial information is applied.
+        //GL gl = gld.getGL();
         String cur_mtl = faces.get( 0 ).material_name;
         try
         {
-            faces.get( 0 ).material.apply( gld );
+            faces.get( 0 ).material.apply( gl );
         }
         catch( java.lang.NullPointerException ne )
         {

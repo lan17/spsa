@@ -64,11 +64,11 @@ public class LightNode
      * applies this light to panel.
      * @param panel GLAutoDrawable
      */
-    public void render( GLAutoDrawable panel )
+    public void render( GL gl )
     {
-        super.render( panel );
+        super.render( gl );
 
-        GL gl = panel.getGL();
+        //GL gl = panel.getGL();
 
         gl.glEnable( gl.GL_LIGHTING );
         gl.glEnable( light_num );

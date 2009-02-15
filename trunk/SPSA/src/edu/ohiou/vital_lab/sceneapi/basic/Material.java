@@ -81,9 +81,9 @@ public class Material
      * this method applies this material to the GL instance.
      * @param drawable GLAutoDrawable
      */
-    public void apply( GLAutoDrawable drawable )
+    public void apply( GL gl )
     {
-        GL gl = drawable.getGL();
+       // GL gl = drawable.getGL();
 
         gl.glMaterialfv( gl.GL_FRONT_AND_BACK, gl.GL_AMBIENT, ambient, 0 );
         gl.glMaterialfv( gl.GL_FRONT_AND_BACK, gl.GL_DIFFUSE, diffuse, 0 );
