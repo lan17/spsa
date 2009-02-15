@@ -7,7 +7,7 @@ import javax.media.opengl.*;
 import javax.media.opengl.glu.GLU;
 
 import edu.ohiou.vital_lab.sceneapi.basic.*;
-import edu.ohiou.vital_lab.sceneapi.lol.HyperCube;
+import edu.ohiou.vital_lab.sceneapi.examples.hyper_cube.HyperCube;
 
 
 

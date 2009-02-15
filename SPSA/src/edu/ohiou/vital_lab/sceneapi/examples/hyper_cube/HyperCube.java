@@ -1,4 +1,4 @@
-package edu.ohiou.vital_lab.sceneapi.lol;
+package edu.ohiou.vital_lab.sceneapi.examples.hyper_cube;
 
 import javax.media.opengl.GLAutoDrawable;
 
