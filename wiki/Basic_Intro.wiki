@@ -1,6 +1,9 @@
 #summary Explanation of very basic features of SPSA
 
+<wiki:toc max_depth="6" />
+
 = Scene Tree =
+== ANode ==
 
 A scene tree is a way to represent a scene where each object is related to another spatially via parent/child relationship.  ANode class is super class to all other objects in a tree.  It stores position, scale and rotation.  However these values are always in relation to node's parent.  
 
