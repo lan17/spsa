@@ -1,0 +1,108 @@
+package edu.ohiou.vital_lab.sceneapi.examples.hyper_cube;
+
+import edu.ohiou.vital_lab.sceneapi.*;
+import edu.ohiou.vital_lab.sceneapi.basic.*;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GLAutoDrawable;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class Main extends GenericRenderer implements Runnable
+{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	Thread main_thread;
+	
+	HyperCube h_cube;
+	LightNode light0;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		new Main();
+	}
+
+	public Main()
+	{
+		main_thread = new Thread( this );
+		main_thread.run();
+	}
+	
+	
+
+	@Override public void run()
+	{
+		JFrame frame = new JFrame( "HyperCube" );
+		frame.setSize( new Dimension( 640, 480 ) );
+		frame.add( this );
+		frame.addWindowListener( new WindowAdapter()
+		{
+			public void windowClosing(WindowEvent e)
+			{
+				System.exit( 0 );
+			}
+		} );
+		frame.setVisible( true );
+		//super.setClearColor(  new Color( 255, 255, 255 ) );
+		
+		try
+		{
+			while (true)
+			{
+				this.display();
+				Thread.yield();
+			}
+		}
+		catch (Exception exc)
+		{
+			exc.printStackTrace();
+		}
+	}
+	
+	
+	private int light_disp_list;
+	public void init( GLAutoDrawable g )
+	{
+		super.init(  g  );
+		
+		h_cube = new HyperCube( g );
+		light0 = new LightNode( GL.GL_LIGHT0 );
+		
+		GL gl = g.getGL();
+		light_disp_list = gl.glGenLists( 1 );
+		gl.glNewList( light_disp_list, gl.GL_COMPILE );
+		light0.render(  gl  );
+		gl.glEndList();
+		
+		//h_cube.addChild(  light0  );
+		//h_cube.makeRCubez(  5 );
+	}
+	
+	
+	private float r = 0;
+	public void display(GLAutoDrawable gLAutoDrawable)
+	{
+		super.display( gLAutoDrawable );
+		GL gl = gLAutoDrawable.getGL();
+		
+		gl.glTranslatef( 0.0f, 0, -5.0f );
+		gl.glRotatef( r, 0, 0, 1 );
+		//gl.glCallList(  light_disp_list );
+		ANode.renderTree(  gl, h_cube );
+		r += .1;
+
+	}
+	
+	
+
+}
