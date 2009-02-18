@@ -76,12 +76,18 @@ public class Main extends GenericRenderer implements Runnable
 		super.init(  g  );
 		
 		h_cube = new HyperCube( g );
+		System.out.println( "Nodes in Hyper Cube = " + Integer.toString(  ANode.countNodes( h_cube ) ));
 		light0 = new LightNode( GL.GL_LIGHT0 );
+		
+		light0.position[0]=0;
+		
+		Material m = new Material();
 		
 		GL gl = g.getGL();
 		light_disp_list = gl.glGenLists( 1 );
 		gl.glNewList( light_disp_list, gl.GL_COMPILE );
 		light0.render(  gl  );
+		m.apply( gl );
 		gl.glEndList();
 		
 		//h_cube.addChild(  light0  );
@@ -90,16 +96,29 @@ public class Main extends GenericRenderer implements Runnable
 	
 	
 	private float r = 0;
+	private int h_list = -1;
 	public void display(GLAutoDrawable gLAutoDrawable)
 	{
 		super.display( gLAutoDrawable );
 		GL gl = gLAutoDrawable.getGL();
+		gl.glCallList(  light_disp_list );
+		gl.glTranslatef( 0.0f, 0, -3.0f );
+		gl.glRotatef( r, 1, 1, 1 );
 		
-		gl.glTranslatef( 0.0f, 0, -5.0f );
-		gl.glRotatef( r, 0, 0, 1 );
-		//gl.glCallList(  light_disp_list );
+		/*
+		if( h_list == -1 ) 
+		{
+			h_list = gl.glGenLists(  1  );
+			gl.glNewList(  h_list, gl.GL_COMPILE );
+			ANode.renderTree(  gl, h_cube );
+			gl.glEndList();
+		}
+		gl.glCallList(  h_list  );
+		*/
+		
 		ANode.renderTree(  gl, h_cube );
-		r += .1;
+		
+		r += .5;
 
 	}
 	
