@@ -106,7 +106,7 @@ public class ANode
 	/**
 	 * References to the children nodes. Uses Java's LinkedList data structure.
 	 */
-	protected LinkedList children;
+	protected LinkedList<ANode> children;
 
 	/**
 	 * reference to the parent node.
@@ -256,20 +256,19 @@ public class ANode
 	 */
 	static public void renderTree(GL gl, ANode root)
 	{
-		// GL gl = contex.getGL();
-		if (root.pushPop())
+		if (root.ppop)
 		{
 			gl.glPushMatrix(); // push current model view matrix on the stack,
 								// if pushPop is true
 		}
 		root.render( gl ); // render current node. This will potentialy affect
 							// modelview matrix.
-		for (Object child : root.children)
+		for (ANode child : root.children)
 		{
-			renderTree( gl, ((ANode) child) );
+			renderTree( gl, child );
 		} // render the children. Notice that modelview matrix affecting these
 			// children is modified by previous call to root.render()
-		if (root.pushPop())
+		if (root.ppop)
 		{
 			gl.glPopMatrix(); // // pop current model view matrix from the
 								// stack, if pushPop is true
@@ -285,28 +284,13 @@ public class ANode
 	 */
 	static public int countNodes(ANode root)
 	{
-		return countNodes( root, 0 );
-	}
-
-	/**
-	 * counts the number of nodes in the tree with root as root.
-	 * 
-	 * @param root
-	 *            ANode - root to the tree to count nodes of.
-	 * @param count
-	 *            int - current count.
-	 * @return int - number of nodes in root.
-	 */
-	static private int countNodes(ANode root, int count)
-	{
-		int c = count + 1;
-		if (root.children.size() == 0) { return c; }
-		for (Object n : root.children)
+		int ret = 1;
+		for( ANode kid : root.children )
 		{
-			c += countNodes( (ANode) n, count );
+			ret += countNodes( kid );
 		}
-		return c;
-	}
+		return ret;
+	}	
 
 	public boolean pushPop()
 	{
