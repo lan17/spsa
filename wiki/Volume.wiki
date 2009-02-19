@@ -11,4 +11,4 @@ features include:
   * Use fixed function or per-pixel phong shading on generated surfaces. 
 
 || Human head using linear shader. || <img src=http://spsa.googlecode.com/files/head_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution Screenshot] ||
-|| Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || ||
+|| Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || [full_size_head_gauss Full Resolution Screenshot] ||
