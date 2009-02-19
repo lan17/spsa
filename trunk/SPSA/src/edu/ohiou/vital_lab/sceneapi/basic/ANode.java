@@ -124,7 +124,7 @@ public class ANode
 	{
 		translation = new Coordinate();
 		scale = new Coordinate( 1, 1, 1 );
-		rotation = new Coordinate();
+		rotation = new Coordinate( 1,1,1 );
 		rotation_angle = 0;
 		ppop = true;
 		children = new LinkedList< ANode >();
@@ -214,7 +214,7 @@ public class ANode
 																	// relative
 																	// to the
 																	// parent.
-		gl.glRotated( rotation_angle, rotation.getX(), rotation.getY(), rotation.getZ() ); // rotate
+		if( rotation_angle != 0 ) gl.glRotated( rotation_angle, rotation.getX(), rotation.getY(), rotation.getZ() ); // rotate
 																							// around
 																							// rotation
 																							// by
@@ -300,6 +300,15 @@ public class ANode
 	public void setPushPop(boolean a)
 	{
 		ppop = a;
+	}
+	
+	public static void setRotAngle( float rotation_angle, ANode node )
+	{
+		node.rotation_angle = rotation_angle;
+		for( ANode child : node.children )
+		{
+			setRotAngle(  rotation_angle*-1, child );
+		}
 	}
 
 	/**

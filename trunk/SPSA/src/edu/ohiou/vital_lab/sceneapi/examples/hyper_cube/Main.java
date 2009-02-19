@@ -103,7 +103,7 @@ public class Main extends GenericRenderer implements Runnable
 		GL gl = gLAutoDrawable.getGL();
 		gl.glCallList(  light_disp_list );
 		gl.glTranslatef( 0.0f, 0, -3.0f );
-		gl.glRotatef( r, 1, 1, 1 );
+		//gl.glRotatef( r, 1, 1, 1 );
 		
 		/*
 		if( h_list == -1 ) 
@@ -115,6 +115,8 @@ public class Main extends GenericRenderer implements Runnable
 		}
 		gl.glCallList(  h_list  );
 		*/
+		
+		ANode.setRotAngle(  r/2 , h_cube );
 		
 		ANode.renderTree(  gl, h_cube );
 		

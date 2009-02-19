@@ -98,22 +98,22 @@ public class GenericRenderer extends GLCanvas implements GLEventListener
 	{
 		checkFunctions( gLAutoDrawable );
 		GL gl = gLAutoDrawable.getGL();
-		gLAutoDrawable.setGL( new DebugGL( gl ) );
+		//gLAutoDrawable.setGL( new DebugGL( gl ) );
 		gl.glShadeModel( GL.GL_SMOOTH );
-		gl.glClearColor( (float) clear_color.getRed() / 255f, (float) clear_color.getGreen() / 255f, (float) clear_color.getBlue() / 255f, 1f ); // set
+		//gl.glClearColor( (float) clear_color.getRed() / 255f, (float) clear_color.getGreen() / 255f, (float) clear_color.getBlue() / 255f, 1f ); // set
 																																					// background
 																																					// color
-																																					// to
+		gl.glEnable(gl.GL_CULL_FACE);																																// to
 																																					// black
 																																					// .
 		gl.glClearDepth( 1.0f );
 
 		gl.glEnable( GL.GL_DEPTH_TEST );
 		gl.glDepthFunc( GL.GL_LEQUAL );
-		gl.glHint( GL.GL_PERSPECTIVE_CORRECTION_HINT, GL.GL_NICEST );
+		//gl.glHint( GL.GL_PERSPECTIVE_CORRECTION_HINT, GL.GL_NICEST );
 
-		gl.glEnable( GL.GL_BLEND );
-		gl.glBlendFunc( GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA );
+		//gl.glEnable( GL.GL_BLEND );
+		//gl.glBlendFunc( GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA );
 
 	}
 
