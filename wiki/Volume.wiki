@@ -1,5 +1,7 @@
 #summary Scalar field Volume Renderer
 
+= Summary = 
+
 Lev has worked on this project in the summer of 2008. It is for visualizing scalar volume data.
 
 features include:
@@ -9,6 +11,8 @@ features include:
   * Use linear shader to color different data regions with gradually different colors for more colorful pictures. (You cannot control the gradient right now. I should probably build it in).
   * Create iso-surfaces using marching cubes algorithm around the mean and standard deviation you chose in gaussian shader. This works pretty fast, but contains some bugs, specifically sometimes the direction of normal vectors are reveresed, producing undesirable effects. (I haven't figured out how to fix this problem yet.)
   * Use fixed function or per-pixel phong shading on generated surfaces. 
+
+= Screenshots =
 
 || Human head using linear shader. || <img src=http://spsa.googlecode.com/files/head_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution Screenshot] ||
 || Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || [full_size_head_gauss Full Resolution Screenshot] ||
