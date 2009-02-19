@@ -36,3 +36,4 @@ Next screenshots are of wavefront data.
 || Inside the wavefront.  Still using Gauss shader. || <img src=http://spsa.googlecode.com/files/Wave_front_gauss_inside.png width=640 height=400> || [full_size_wave_front_inside1 Full Resolution Screenshot] ||
 || Looking at the surface of the same wavefront. || <img src=http://spsa.googlecode.com/files/wavefront_surface.png width=640 height=400> || [full_size_wave_front_surface Full Resolution Screenshot] ||
 || Iso surface about this wavefront with mean and deviation close to above's screenshots. || <img src=http://spsa.googlecode.com/files/wavefront_iso_surface2.png width=640 height=400> || [full_size_wavefront_isosurface1 Full Resolution Screenshot] ||
+|| "Inverted" iso surface || <img src=http://spsa.googlecode.com/files/wave_front_iso_surface6.png width=640 height=400> || [full_size_wavefront_isosurface2 Full Resolution Screenshot] ||
