@@ -59,6 +59,15 @@ public class HyperCube extends ANode
 			super.translation.set( x_off, y_off, z_off );
 		}
 		
+		public void animate()
+		{
+			this.applyMaskOffset();
+			for( ANode child : children )
+			{
+				((Cube)child).animate();
+			}
+		}
+		
 		double x_off, y_off, z_off;
 		
 		public int offset_mask;
@@ -129,6 +138,16 @@ public class HyperCube extends ANode
 		init( g );
 		makeRCubez( this, detail );
 
+	}
+	
+	public void setOffset( float offset )
+	{
+		this.offset = offset;
+	}
+	
+	public float getOffset( )
+	{
+		return offset;
 	}
 
 	private void cleanUp()
@@ -275,16 +294,12 @@ public class HyperCube extends ANode
 		makeRCubez( small_cube, n, nrec );
 	}
 	
-	private static void animate( Cube cube )
-	{
-		
-	}
 	
-	public static void animte( HyperCube cube )
+	public void animte( )
 	{
-		for( ANode child : cube.children )
+		for( ANode child : children )
 		{
-			
+			((Cube)child).animate();
 		}
 	}
 
