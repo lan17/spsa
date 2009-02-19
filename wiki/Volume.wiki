@@ -26,6 +26,6 @@ The data that was used to generate the following screenshots has been taken from
 
 || Human head using linear shader. || <img src=http://spsa.googlecode.com/files/skull_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution Screenshot] ||
 || Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || [full_size_head_gauss Full Resolution Screenshot] ||
-|| Iso surface generated about same mean/standard deviation as was used in above screenshot. || <img src=http://spsa.googlecode.com/files/head_iso.jpg width=640 height=400> || [full_size_head_iso Full Resolution Screenshot] ||
+|| Iso surface generated about same mean/standard deviation as was used in above screenshot.  Uses fixed function OpenGL lighting. || <img src=http://spsa.googlecode.com/files/head_iso.jpg width=640 height=400> || [full_size_head_iso Full Resolution Screenshot] ||
 || Teddy bear using low slice gauss shader. || <img src=http://spsa.googlecode.com/files/bear_gauss.jpg width=640 height=400> || [full_size_bear_gauss Full Resolution Screenshot] ||
-|| Iso surface generated from this teddy bear. || <img src=http://spsa.googlecode.com/files/bear_iso.jpg width=640 height=400> || [full_size_bear_iso Full Resolution Screenshot] ||
+|| Iso surface generated from this teddy bear.  Uses per-pixel phong lighting. || <img src=http://spsa.googlecode.com/files/bear_iso.jpg width=640 height=400> || [full_size_bear_iso Full Resolution Screenshot] ||
