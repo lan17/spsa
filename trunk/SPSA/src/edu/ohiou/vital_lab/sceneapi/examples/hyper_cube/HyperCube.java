@@ -26,8 +26,25 @@ import edu.ohiou.vital_lab.sceneapi.basic.DisplayListManager;
  * @author Lev A Neiman
  * @version 1.0
  */
+/**
+ * @author Entheogen
+ *
+ */
 public class HyperCube extends ANode
 {
+	
+	public class Cube extends ANode
+	{		
+		public Cube( int disp_list )
+		{
+			super( disp_list );
+		}
+		
+		public float offset;
+		public int offset_mask;
+		public int direction;
+	}
+	
 	/**
 	 * size difference between parent and children. its .5 by default, meaning
 	 * each child is half the size of parent.
@@ -163,47 +180,52 @@ public class HyperCube extends ANode
 	 * @param rec
 	 *            int
 	 */
+	/**
+	 * @param tree
+	 * @param n
+	 * @param rec
+	 */
 	public void makeRCubez(ANode tree, int n, int rec)
 	{
 		if (rec >= n) { return; } // if current recursion level is deeper than
 									// n, return.
 		int nrec = rec + 1;
-		ANode small_cube = new ANode( cur_disp );
+		ANode small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x1" );
 		tree.addChild( small_cube );
-		small_cube.translation().set( -offset, 0, 0 );
+		//small_cube.translation().set( -offset, 0, 0 );
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
-		small_cube = new ANode( cur_disp );
+		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x2" );
 		tree.addChild( small_cube );
 		small_cube.translation().set( offset, 0, 0 );
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
-		small_cube = new ANode( cur_disp );
+		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x3" );
 		tree.addChild( small_cube );
 		small_cube.translation().set( 0, offset, 0 );
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
-		small_cube = new ANode( cur_disp );
+		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x4" );
 		tree.addChild( small_cube );
 		small_cube.translation().set( 0, -offset, 0 );
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
-		small_cube = new ANode( cur_disp );
+		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x5" );
 		tree.addChild( small_cube );
 		small_cube.translation().set( 0, 0, offset );
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
-		small_cube = new ANode( cur_disp );
+		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x6" );
 		tree.addChild( small_cube );
 		small_cube.translation().set( 0, 0, -offset );
