@@ -1,0 +1,3 @@
+#summary Human head with Gaussian shader.
+
+[http://spsa.googlecode.com/files/skull.jpg]
