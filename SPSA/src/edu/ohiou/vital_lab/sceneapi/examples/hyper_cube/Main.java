@@ -116,7 +116,7 @@ public class Main extends GenericRenderer implements Runnable
 		gl.glCallList(  h_list  );
 		*/
 		
-		ANode.setRotAngle(  r/2 , h_cube );
+		ANode.setRotAngle(  r , h_cube );
 		
 		ANode.renderTree(  gl, h_cube );
 		
