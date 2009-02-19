@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class Main extends GenericRenderer implements Runnable
+public class HyperCube_Main extends GenericRenderer implements Runnable
 {
 
 	/**
@@ -29,10 +29,14 @@ public class Main extends GenericRenderer implements Runnable
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
-		new Main();
+		
+		int x = 512;
+		System.out.println( x & (1<<9) );
+		
+		new HyperCube_Main();
 	}
 
-	public Main()
+	public HyperCube_Main()
 	{
 		main_thread = new Thread( this );
 		main_thread.run();
