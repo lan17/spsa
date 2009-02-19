@@ -22,6 +22,8 @@ This should run on Windows XP/Vista, MacOS, Solaris and various versions of Linu
 
 = Screenshots =
 
+The data that was used to generate the following screenshots has been taken from: [http://graphics.stanford.edu/data/voldata/]
+
 || Human head using linear shader. || <img src=http://spsa.googlecode.com/files/skull_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution Screenshot] ||
 || Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || [full_size_head_gauss Full Resolution Screenshot] ||
 || Iso surface generated about same mean/standard deviation as was used in above screenshot. || <img src=http://spsa.googlecode.com/files/head_iso.jpg width=640 height=400> || [full_size_head_iso Full Resolution Screenshot] ||
