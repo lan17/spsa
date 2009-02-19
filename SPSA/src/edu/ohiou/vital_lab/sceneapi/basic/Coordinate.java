@@ -377,4 +377,41 @@ public class Coordinate implements Serializable, Comparable, Cloneable
 		}
 	}
 
+	/**
+	 * computes a normal between (a-c)x(b-c)
+	 * 
+	 * @param a
+	 *            Coordinate
+	 * @param b
+	 *            Coordinate
+	 * @param c
+	 *            Coordinate
+	 * @return Coordinate
+	 */
+	public static Coordinate getNormal(Coordinate a, Coordinate b, Coordinate c)
+	{
+		Coordinate tmp = new Coordinate( -b.getX(), -b.getY(), -b.getZ() );
+		Coordinate tmp2 = new Coordinate( -c.getX(), -c.getY(), -c.getZ() );
+		a.add( tmp );
+		b.add( tmp2 );
+		double i = (a.getY() * b.getZ() - a.getZ() * b.getY());
+		double j = (a.getX() * b.getZ() - a.getZ() * b.getX());
+		double k = (a.getX() * b.getY() - a.getY() * b.getX());
+		b.add( c );
+		a.add( b );
+	
+		/*
+		 * double i = ((( b.getY() - a.getY() ) ( c.getZ() - a.getZ() ) ) - ( (
+		 * c.getY() - a.getY() ) ( b.getZ() - a.getZ() ) ) ); double j = (((
+		 * b.getZ() - a.getZ() ) ( c.getX() - a.getX() ) ) - ( ( c.getZ() -
+		 * a.getZ() ) ( b.getX() - a.getX() ) ) ); double k = ((( b.getX() -
+		 * a.getX() ) ( c.getY() - a.getY() ) ) - ( ( c.getX() - a.getX() ) (
+		 * b.getY() - a.getY() ) ) );
+		 */
+		tmp.setX( i );
+		tmp.setY( -1 * j );
+		tmp.setZ( k );
+		return tmp;
+	}
+
 }

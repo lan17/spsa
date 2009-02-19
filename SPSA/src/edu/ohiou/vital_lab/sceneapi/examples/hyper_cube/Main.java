@@ -42,7 +42,7 @@ public class Main extends GenericRenderer implements Runnable
 
 	@Override public void run()
 	{
-		JFrame frame = new JFrame( "HyperCube" );
+		Frame frame = new Frame( "HyperCube" );
 		frame.setSize( new Dimension( 640, 480 ) );
 		frame.add( this );
 		frame.addWindowListener( new WindowAdapter()
