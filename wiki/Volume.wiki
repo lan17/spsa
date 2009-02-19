@@ -10,4 +10,5 @@ features include:
   * Create iso-surfaces using marching cubes algorithm around the mean and standard deviation you chose in gaussian shader. This works pretty fast, but contains some bugs, specifically sometimes the direction of normal vectors are reveresed, producing undesirable effects. (I haven't figured out how to fix this problem yet.)
   * Use fixed function or per-pixel phong shading on generated surfaces. 
 
-|| human head using linear shader || <img src=http://spsa.googlecode.com/files/head_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution] ||
+|| Human head using linear shader. || <img src=http://spsa.googlecode.com/files/head_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution Screenshot] ||
+|| Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || ||
