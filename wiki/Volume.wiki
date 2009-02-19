@@ -1,4 +1,4 @@
-#summary Scalar field Volume Renderer
+#summary Scalar field Volume Renderer.
 
 = Summary = 
 
