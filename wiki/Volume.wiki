@@ -12,3 +12,4 @@ features include:
 
 || Human head using linear shader. || <img src=http://spsa.googlecode.com/files/head_linear.jpg width=640 height=400> || [full_size_head_linear Full Resolution Screenshot] ||
 || Same data with Gaussian shader. || <img src=http://spsa.googlecode.com/files/skull.jpg width=640 height=400> || [full_size_head_gauss Full Resolution Screenshot] ||
+|| Iso surface generated about same mean/standard deviation as was used in above screenshot. || <img src=http://spsa.googlecode.com/files/head_iso.jpg width=640 height=400> || [full_size_head_iso Full Resolution Screenshot] ||
