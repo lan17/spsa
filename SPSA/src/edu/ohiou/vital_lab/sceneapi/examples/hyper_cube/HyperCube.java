@@ -40,10 +40,40 @@ public class HyperCube extends ANode
 			super( disp_list );
 		}
 		
-		public float offset;
+		public void setOffsetMask( int mask )
+		{
+			this.offset_mask = mask;			
+		}
+		
+		
+		public void applyMaskOffset( )
+		{
+			if( (offset_mask & x_offset ) != 0 ) x_off = offset;
+			if( (offset_mask & y_offset ) != 0 ) y_off = offset;
+			if( (offset_mask & z_offset ) != 0 ) z_off = offset;
+			
+			if( (offset_mask & x_dir ) != 0 ) x_off *= -1;
+			if( (offset_mask & y_dir ) != 0 ) y_off *= -1;
+			if( (offset_mask & z_dir ) != 0 ) z_off *= -1;
+			
+			super.translation.set( x_off, y_off, z_off );
+		}
+		
+		double x_off, y_off, z_off;
+		
 		public int offset_mask;
 		public int direction;
+		
+		
 	}
+	
+	static int x_offset = 1<<3;
+	static int y_offset = 1<<2;
+	static int z_offset = 1;
+	
+	static int z_dir = 1 <<4;
+	static int y_dir = 1<<5;
+	static int x_dir = 1<<6;
 	
 	/**
 	 * size difference between parent and children. its .5 by default, meaning
@@ -190,47 +220,72 @@ public class HyperCube extends ANode
 		if (rec >= n) { return; } // if current recursion level is deeper than
 									// n, return.
 		int nrec = rec + 1;
-		ANode small_cube = new Cube( cur_disp );
+		Cube small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x1" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( -offset, 0, 0 );
+		small_cube.offset_mask = x_offset | x_dir;
+		small_cube.applyMaskOffset();
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x2" );
 		tree.addChild( small_cube );
-		small_cube.translation().set( offset, 0, 0 );
+		//small_cube.translation().set( offset, 0, 0 );
+		small_cube.offset_mask = x_offset;
+		small_cube.applyMaskOffset();
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x3" );
 		tree.addChild( small_cube );
-		small_cube.translation().set( 0, offset, 0 );
+		//small_cube.translation().set( 0, offset, 0 );
+		small_cube.offset_mask = y_offset;
+		small_cube.applyMaskOffset();
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x4" );
 		tree.addChild( small_cube );
-		small_cube.translation().set( 0, -offset, 0 );
+		//small_cube.translation().set( 0, -offset, 0 );
+		small_cube.offset_mask = y_offset | y_dir;
+		small_cube.applyMaskOffset();
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x5" );
 		tree.addChild( small_cube );
-		small_cube.translation().set( 0, 0, offset );
+		//small_cube.translation().set( 0, 0, offset );
+		small_cube.offset_mask = z_offset;
+		small_cube.applyMaskOffset();
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
 		small_cube.setName( Integer.toString( nrec ) + "x6" );
 		tree.addChild( small_cube );
-		small_cube.translation().set( 0, 0, -offset );
+		//small_cube.translation().set( 0, 0, -offset );
+		small_cube.offset_mask = z_offset | z_dir;
+		small_cube.applyMaskOffset();
 		small_cube.scale().set( sf, sf, sf );
 		makeRCubez( small_cube, n, nrec );
+	}
+	
+	private static void animate( Cube cube )
+	{
+		
+	}
+	
+	public static void animte( HyperCube cube )
+	{
+		for( ANode child : cube.children )
+		{
+			
+		}
 	}
 
 }
