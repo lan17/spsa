@@ -34,3 +34,4 @@ Next screenshots are of wavefront data.
 
 || Using Gauss shader on wavefront with some imperfections inside of it. || <img src=http://spsa.googlecode.com/files/wave_front_gauss_1.png width=640 height=400> || [full_size_wavefront_gauss1 Full Resolution Screenshot] ||
 || Inside the wavefront.  Still using Gauss shader. || <img src=http://spsa.googlecode.com/files/Wave_front_gauss_inside.png width=640 height=400> || [full_size_wave_front_inside1 Full Resolution Screenshot] ||
+|| Looking at the surface of the same wavefront. || <img src=http://spsa.googlecode.com/files/wavefront_surface.png width=640 height=400> || [full_size_wave_front_surface Full Resolution Screenshot] ||
