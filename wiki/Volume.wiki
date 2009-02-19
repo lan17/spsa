@@ -29,3 +29,7 @@ The data that was used to generate the following screenshots has been taken from
 || Iso surface generated about same mean/standard deviation as was used in above screenshot.  Uses fixed function OpenGL lighting. || <img src=http://spsa.googlecode.com/files/head_iso.jpg width=640 height=400> || [full_size_head_iso Full Resolution Screenshot] ||
 || Teddy bear using low slice gauss shader. || <img src=http://spsa.googlecode.com/files/bear_gauss.jpg width=640 height=400> || [full_size_bear_gauss Full Resolution Screenshot] ||
 || Iso surface generated from this teddy bear.  Uses per-pixel phong lighting. || <img src=http://spsa.googlecode.com/files/bear_iso.jpg width=640 height=400> || [full_size_bear_iso Full Resolution Screenshot] ||
+
+Next screenshots are of wavefront data.
+
+|| Using Gauss shader on wavefront with some imperfections inside of it. || <img src=http://spsa.googlecode.com/files/wave_front_gauss_1.png width=640 height=400> || ||
