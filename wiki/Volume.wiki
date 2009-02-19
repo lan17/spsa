@@ -32,4 +32,4 @@ The data that was used to generate the following screenshots has been taken from
 
 Next screenshots are of wavefront data.
 
-|| Using Gauss shader on wavefront with some imperfections inside of it. || <img src=http://spsa.googlecode.com/files/wave_front_gauss_1.png width=640 height=400> || ||
+|| Using Gauss shader on wavefront with some imperfections inside of it. || <img src=http://spsa.googlecode.com/files/wave_front_gauss_1.png width=640 height=400> || [full_size_wavefront_gauss1 Full Resolution Screenshot] ||
