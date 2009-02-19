@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.*;
 
 public class HyperCube_Main extends GenericRenderer implements Runnable
 {
@@ -75,11 +76,13 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 	
 	
 	private int light_disp_list;
+	private float default_offset;
 	public void init( GLAutoDrawable g )
 	{
 		super.init(  g  );
 		
 		h_cube = new HyperCube( g );
+		default_offset = h_cube.getOffset();
 		System.out.println( "Nodes in Hyper Cube = " + Integer.toString(  ANode.countNodes( h_cube ) ));
 		light0 = new LightNode( GL.GL_LIGHT0 );
 		
@@ -99,6 +102,7 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 	}
 	
 	
+	private float A = .5f;
 	private float r = 0;
 	private int h_list = -1;
 	public void display(GLAutoDrawable gLAutoDrawable)
@@ -106,7 +110,7 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 		super.display( gLAutoDrawable );
 		GL gl = gLAutoDrawable.getGL();
 		gl.glCallList(  light_disp_list );
-		gl.glTranslatef( 0.0f, 0, -3.0f );
+		gl.glTranslatef( 0.0f, 0, -5.0f );
 		//gl.glRotatef( r, 1, 1, 1 );
 		
 		/*
@@ -120,7 +124,9 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 		gl.glCallList(  h_list  );
 		*/
 		
-		ANode.setRotAngle(  r , h_cube );
+		ANode.setRotAngle( (float) (360 + 360*Math.sin( r/80 )) , h_cube );
+		h_cube.setOffset( default_offset + A + A*(float)Math.sin( r / 10 )  );
+		h_cube.animte();
 		
 		ANode.renderTree(  gl, h_cube );
 		

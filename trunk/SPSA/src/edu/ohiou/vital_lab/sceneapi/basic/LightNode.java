@@ -43,7 +43,7 @@ public class LightNode extends ANode
 	/**
 	 * position
 	 */
-	public float position[] = { 3f, -0f, 1f, 1.0f };
+	public float position[] = { 3f, -5f, 1f, 1.0f };
 
 	/**
 	 * OpenGL int for this light they go from GL.GL_LIGHT0 to GL.LIGHT8
