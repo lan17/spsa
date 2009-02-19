@@ -9,3 +9,5 @@ features include:
   * Use linear shader to color different data regions with gradually different colors for more colorful pictures. (You cannot control the gradient right now. I should probably build it in).
   * Create iso-surfaces using marching cubes algorithm around the mean and standard deviation you chose in gaussian shader. This works pretty fast, but contains some bugs, specifically sometimes the direction of normal vectors are reveresed, producing undesirable effects. (I haven't figured out how to fix this problem yet.)
   * Use fixed function or per-pixel phong shading on generated surfaces. 
+
+|| human head using linear shader || <a href=http://spsa.googlecode.com/files/head_linear.jpg><img src=http://spsa.googlecode.com/files/head_linear.jpg width=640 height=400></a> || 
