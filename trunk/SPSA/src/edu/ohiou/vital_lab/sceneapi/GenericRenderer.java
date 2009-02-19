@@ -122,7 +122,7 @@ public class GenericRenderer extends GLCanvas implements GLEventListener
 		GL gl = gLAutoDrawable.getGL();
 		gl.glClear( GL.GL_COLOR_BUFFER_BIT );
 		gl.glClear( GL.GL_DEPTH_BUFFER_BIT );
-		gl.glMatrixMode( GL.GL_MODELVIEW );
+		//gl.glMatrixMode( GL.GL_MODELVIEW );
 		gl.glLoadIdentity();
 
 	}

@@ -466,7 +466,7 @@ public class ModelFile
 			// System.out.println("Calculating Normals..........");
 			for (Triangle triangle : triangles)
 			{
-				triangle.normal = ANode.getNormal( triangle.a, triangle.b, triangle.c );
+				triangle.normal = Coordinate.getNormal( triangle.a, triangle.b, triangle.c );
 			}
 			// System.out.println("Done calculating normals........." );
 		}
