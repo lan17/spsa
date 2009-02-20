@@ -3,7 +3,7 @@ package spsa.examples.hyper_cube;
 import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
 
-import spsa.basic.ANode;
+import spsa.basic.*;
 import spsa.basic.DisplayListManager;
 
 
@@ -39,6 +39,7 @@ public class HyperCube extends ANode
 		public Cube( int disp_list )
 		{
 			super( disp_list );
+			color = new Coordinate( 1,1,1);
 		}
 		
 		public void setOffsetMask( int mask )
@@ -63,16 +64,27 @@ public class HyperCube extends ANode
 		public void animate()
 		{
 			this.applyMaskOffset();
+			this.color.setX( .5 + .5 * Math.sin(  rec * Math.PI / 4) );
 			for( ANode child : children )
 			{
 				((Cube)child).animate();
 			}
 		}
 		
+		public void render( GL gl )
+		{
+			super.render( gl );
+			//gl.glColor3d( color.getX(), color.getY(), color.getZ() );
+		}
+		
+		public Coordinate color;
+		
 		double x_off, y_off, z_off;
 		
 		public int offset_mask;
 		public int direction;
+		
+		public int rec;
 		
 		
 	}
@@ -137,7 +149,8 @@ public class HyperCube extends ANode
 	{
 		super();
 		init( g );
-		makeRCubez( this, detail );
+		//show = false;
+		makeRCubez( detail );
 
 	}
 	
@@ -204,6 +217,8 @@ public class HyperCube extends ANode
 	 */
 	public void makeRCubez(int n)
 	{
+		//Cube root_cube = new Cube(cur_disp);
+		//super.addChild(  root_cube );
 		makeRCubez( this, n );
 	}
 
@@ -241,6 +256,7 @@ public class HyperCube extends ANode
 									// n, return.
 		int nrec = rec + 1;
 		Cube small_cube = new Cube( cur_disp );
+		small_cube.rec = rec;
 		small_cube.setName( Integer.toString( nrec ) + "x1" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( -offset, 0, 0 );
@@ -250,6 +266,7 @@ public class HyperCube extends ANode
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
+		small_cube.rec = rec;
 		small_cube.setName( Integer.toString( nrec ) + "x2" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( offset, 0, 0 );
@@ -259,6 +276,7 @@ public class HyperCube extends ANode
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
+		small_cube.rec = rec;
 		small_cube.setName( Integer.toString( nrec ) + "x3" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( 0, offset, 0 );
@@ -268,6 +286,7 @@ public class HyperCube extends ANode
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
+		small_cube.rec = rec;
 		small_cube.setName( Integer.toString( nrec ) + "x4" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( 0, -offset, 0 );
@@ -277,6 +296,7 @@ public class HyperCube extends ANode
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
+		small_cube.rec = rec;
 		small_cube.setName( Integer.toString( nrec ) + "x5" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( 0, 0, offset );
@@ -286,6 +306,7 @@ public class HyperCube extends ANode
 		makeRCubez( small_cube, n, nrec );
 
 		small_cube = new Cube( cur_disp );
+		small_cube.rec = rec;
 		small_cube.setName( Integer.toString( nrec ) + "x6" );
 		tree.addChild( small_cube );
 		//small_cube.translation().set( 0, 0, -offset );

@@ -33,9 +33,17 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
+
+		double sum = 0;
+		double delta = 0.00001;
+		for(double x = 0; x <= 1.060660172; x += delta )
+		{
+			sum += Math.exp( -1 * Math.pow(  x, 2 ) ) * delta;;
+		}
+		sum *= 2.0 / Math.sqrt(  Math.PI ) + 1;
+		sum /= 2.0;
 		
-		int x = 512;
-		System.out.println( x & (1<<9) );
+		System.out.println( sum );
 		
 		new HyperCube_Main();
 	}
@@ -106,14 +114,14 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 	
 	
 	private float A = 1f;
-	private float r = 0;
+	public static float r = 0;
 	private int h_list = -1;
 	public void display(GLAutoDrawable gLAutoDrawable)
 	{
 		super.display( gLAutoDrawable );
 		GL gl = gLAutoDrawable.getGL();
 		gl.glCallList(  light_disp_list );
-		gl.glTranslatef( 0.0f, 0, -3.0f );
+		gl.glTranslated( 0.0f, 0, -3 - .5*Math.cos( r/10 ) );
 		//gl.glRotatef( r, 1, 1, 1 );
 		
 		/*
