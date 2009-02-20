@@ -1,4 +1,4 @@
-package spsa;
+package spsa.utils;
 
 import java.util.Vector;
 

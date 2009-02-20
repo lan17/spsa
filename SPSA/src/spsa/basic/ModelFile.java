@@ -3,8 +3,8 @@ package spsa.basic;
 import java.io.File;
 import java.util.*;
 
-import spsa.Utils;
 import spsa.basic.exceptions.ModelFile_ReadError;
+import spsa.utils.Utils;
 
 
 /**

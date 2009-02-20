@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import spsa.*;
 import spsa.basic.*;
+import spsa.utils.GenericRenderer;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
