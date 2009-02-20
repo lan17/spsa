@@ -1,10 +1,11 @@
-package edu.ohiou.vital_lab.sceneapi.basic;
+package spsa.basic;
 
 import java.io.File;
 import java.util.*;
 
-import edu.ohiou.vital_lab.sceneapi.Utils;
-import edu.ohiou.vital_lab.sceneapi.basic.exceptions.ModelFile_ReadError;
+import spsa.Utils;
+import spsa.basic.exceptions.ModelFile_ReadError;
+
 
 /**
  * <p>

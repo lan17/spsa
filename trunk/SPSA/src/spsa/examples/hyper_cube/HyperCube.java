@@ -1,10 +1,11 @@
-package edu.ohiou.vital_lab.sceneapi.examples.hyper_cube;
+package spsa.examples.hyper_cube;
 
 import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
 
-import edu.ohiou.vital_lab.sceneapi.basic.ANode;
-import edu.ohiou.vital_lab.sceneapi.basic.DisplayListManager;
+import spsa.basic.ANode;
+import spsa.basic.DisplayListManager;
+
 
 /**
  * <p>

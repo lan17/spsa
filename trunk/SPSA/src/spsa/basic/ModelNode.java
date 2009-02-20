@@ -1,4 +1,4 @@
-package edu.ohiou.vital_lab.sceneapi.basic;
+package spsa.basic;
 
 import java.util.Set;
 import java.util.Vector;

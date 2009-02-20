@@ -1,4 +1,4 @@
-package edu.ohiou.vital_lab.sceneapi.examples;
+package spsa.examples;
 
 import java.awt.Frame;
 import java.awt.event.*;
@@ -6,8 +6,9 @@ import java.awt.event.*;
 import javax.media.opengl.*;
 import javax.media.opengl.glu.GLU;
 
-import edu.ohiou.vital_lab.sceneapi.basic.*;
-import edu.ohiou.vital_lab.sceneapi.examples.hyper_cube.HyperCube;
+import spsa.basic.*;
+import spsa.examples.hyper_cube.HyperCube;
+
 
 class JavaRenderer implements GLEventListener, KeyListener
 {
