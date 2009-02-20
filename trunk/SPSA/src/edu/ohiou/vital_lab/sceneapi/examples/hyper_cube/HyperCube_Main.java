@@ -102,7 +102,7 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 	}
 	
 	
-	private float A = .5f;
+	private float A = 1f;
 	private float r = 0;
 	private int h_list = -1;
 	public void display(GLAutoDrawable gLAutoDrawable)
@@ -110,7 +110,7 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 		super.display( gLAutoDrawable );
 		GL gl = gLAutoDrawable.getGL();
 		gl.glCallList(  light_disp_list );
-		gl.glTranslatef( 0.0f, 0, -5.0f );
+		gl.glTranslatef( 0.0f, 0, -3.0f );
 		//gl.glRotatef( r, 1, 1, 1 );
 		
 		/*
@@ -123,8 +123,8 @@ public class HyperCube_Main extends GenericRenderer implements Runnable
 		}
 		gl.glCallList(  h_list  );
 		*/
-		
-		ANode.setRotAngle( (float) (360 + 360*Math.sin( r/80 )) , h_cube );
+		ANode.setScale( .375 + .125* Math.cos(  r/10  ), h_cube );
+		ANode.setRotAngle( (float) (180 + 180*Math.sin( r/80 )) , h_cube );
 		h_cube.setOffset( default_offset + A + A*(float)Math.sin( r / 10 )  );
 		h_cube.animte();
 		
