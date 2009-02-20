@@ -307,7 +307,16 @@ public class ANode
 		node.rotation_angle = rotation_angle;
 		for( ANode child : node.children )
 		{
-			setRotAngle(  rotation_angle*-1, child );
+			setRotAngle(  -1*rotation_angle, child );
+		}
+	}
+	
+	public static void setScale( double scale, ANode node )
+	{
+		node.scale.set( scale, scale, scale );
+		for( ANode child : node.children )
+		{
+			setScale( scale, child );
 		}
 	}
 
