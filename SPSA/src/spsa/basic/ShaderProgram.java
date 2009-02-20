@@ -1,4 +1,4 @@
-package edu.ohiou.vital_lab.sceneapi.basic;
+package spsa.basic;
 
 import javax.media.opengl.GLAutoDrawable;
 import java.io.*;

@@ -1,11 +1,13 @@
-package edu.ohiou.vital_lab.sceneapi.examples.hyper_cube;
+package spsa.examples.hyper_cube;
 
-import edu.ohiou.vital_lab.sceneapi.*;
-import edu.ohiou.vital_lab.sceneapi.basic.*;
 
 import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
 import javax.swing.*;
+
+import spsa.*;
+import spsa.basic.*;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

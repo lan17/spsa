@@ -1,4 +1,4 @@
-package edu.ohiou.vital_lab.sceneapi;
+package spsa;
 
 import java.awt.Color;
 import java.util.LinkedList;
