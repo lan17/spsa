@@ -1,0 +1,1 @@
+![http://spsa.googlecode.com/files/skull.jpg](http://spsa.googlecode.com/files/skull.jpg)

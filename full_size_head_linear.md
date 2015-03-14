@@ -1,0 +1,1 @@
+![http://spsa.googlecode.com/files/skull_linear.jpg](http://spsa.googlecode.com/files/skull_linear.jpg)

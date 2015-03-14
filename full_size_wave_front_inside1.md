@@ -1,0 +1,1 @@
+![http://spsa.googlecode.com/files/Wave_front_gauss_inside.png](http://spsa.googlecode.com/files/Wave_front_gauss_inside.png)
